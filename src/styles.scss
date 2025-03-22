@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: all;
+}
+
+body,
+html {
+  @apply bg-base-100 text-base-content h-full w-full border-0 p-0 m-0 box-border;
+}

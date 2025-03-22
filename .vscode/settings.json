@@ -1,0 +1,8 @@
+{
+  "tailwindCSS.experimental.configFile": "src/styles.scss",
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-*": {
+      "inlineStyle": true
+    }
+  }
+}
