@@ -1,29 +1,31 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
-  template: `<div class="navbar bg-base-100 shadow-sm h-5">
-    <div class="flex-1">
-      <a class="btn btn-ghost text-xl">Kud Jedinstvo App</a>
-    </div>
-    <div class="flex-none">
-      <button class="btn btn-square btn-ghost">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
+  imports: [RouterLink],
+  template: `<div class="navbar h-5">
+    @if(hasBack()){
+    <a class="btn btn-square btn-ghost" routerLink="/">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="ionicon"
+        viewBox="0 0 512 512"
+      >
+        <path
           fill="none"
-          viewBox="0 0 24 24"
-          class="inline-block h-5 w-5 stroke-current"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-          ></path>
-        </svg>
-      </button>
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="48"
+          d="M244 400L100 256l144-144M120 256h292"
+        /></svg></a
+    >} @if(title()){
+    <div class="flex-auto text-3xl font-semibold text-center">
+      {{ title() }}
     </div>
+    }
+    <div class="w-10"></div>
   </div> `,
   styles: `
     :host {
@@ -32,4 +34,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  title = model<string>('');
+  hasBack = model<boolean>(false);
+}

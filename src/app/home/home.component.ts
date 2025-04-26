@@ -7,9 +7,9 @@ import { KoloPickerComponent } from './ui/kolo-picker/kolo-picker.component';
 @Component({
   selector: 'app-folkor',
   imports: [NavbarComponent, KoloPickerComponent],
-  template: `<div class="flex flex-col h-screen">
+  template: `<div class="flex flex-col h-screen fade-in-element">
     <app-navbar></app-navbar>
-    <div class="p-4 flex flex-col">
+    <div class="px-4 pb-12 flex flex-col">
       <img
         class="h-32 w-32 self-center"
         src="logo-kud.png"

@@ -10,7 +10,7 @@ module.exports = {
       pink: colors.fuchsia,
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      sans: ['Montserrat', 'Arial', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
     extend: {
